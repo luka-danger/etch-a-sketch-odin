@@ -12,4 +12,9 @@ for(let i = 0; i < 16; i++) {
         gridDiv.classList.add('div'); 
         grid.appendChild(gridDiv); 
     };
+    addEventListener('mouseover', () => {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        grid.style.background = '#' + randomColor; 
+    }); 
 }; 
+
