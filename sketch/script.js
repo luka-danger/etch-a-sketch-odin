@@ -14,9 +14,11 @@ function makeBoard(size) {
         const box = document.createElement('div');
         box.classList.add('div'); 
         grid.appendChild(box); 
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
         box.addEventListener("mouseover", () => {
-            box.style.backgroundColor = "green";
+            box.style.backgroundColor = "#" + randomColor;
         }); 
     };
 }; 
-makeBoard(50)
+
+makeBoard(16)
