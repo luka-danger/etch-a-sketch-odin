@@ -5,14 +5,16 @@ window.addEventListener('load', (event) => {
 
 function makeBoard(size) {
     let grid = document.querySelector('.grid');
-
+    let boxes = document.querySelectorAll('div'); 
+    // Clear grid
+    boxes.forEach((div) => div.remove()); 
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     for(let i = 0; i < (16 * 16); i++) {
-        const gridDiv = document.createElement('div')
-        gridDiv.classList.add('div'); 
-        grid.appendChild(gridDiv); 
+        const box = document.createElement('div')
+        box.classList.add('div'); 
+        grid.appendChild(box); 
     };
 }; 
 makeBoard(16)
