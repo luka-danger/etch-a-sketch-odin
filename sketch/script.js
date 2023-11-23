@@ -11,7 +11,8 @@ function makeBoard(size) {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    for(let i = 0; i < (16 * 16); i++) {
+    let boardSize = size * size
+    for(let i = 0; i < boardSize; i++) {
         const box = document.createElement('div')
         box.classList.add('div'); 
         grid.appendChild(box); 
