@@ -34,6 +34,10 @@ size64.addEventListener('click', function () {
 });
 
 function clearBoard() {
+    let boxes = document.querySelectorAll('div')
     boxes.forEach((div) => div.remove());
 };
 
+clear.addEventListener('click', function () {
+    clearBoard()
+});
