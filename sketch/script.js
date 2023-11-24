@@ -8,17 +8,22 @@ function makeBoard(size) {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
+
     let boardSize = size * size
     for (let i = 0; i < boardSize; i++) {
         const square = document.createElement('square');
         square.classList.add('square');
         grid.appendChild(square);
-        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "#" + randomColor;
+            square.style.backgroundColor = "black";
         });
     };
 };
+
+start.addEventListener('click', function () {
+    makeBoard(16)
+    square.style.backgroundColor = "black";
+});
 
 size16.addEventListener('click', function () {
     makeBoard(16)
@@ -39,4 +44,10 @@ function clearBoard() {
 
 clear.addEventListener('click', function () {
     clearBoard()
+});
+
+
+let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+square.addEventListener("mouseover", () => {
+    square.style.backgroundColor = "#" + randomColor;
 });
