@@ -1,3 +1,14 @@
+#grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .grid {
     display: grid;
     grid-template-rows: repeat(16, 1fr);
@@ -6,4 +17,3 @@
     width: 500px;
     height: 500px;
 }
-

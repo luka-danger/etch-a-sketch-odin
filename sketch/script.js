@@ -32,3 +32,8 @@ size32.addEventListener('click', function () {
 size64.addEventListener('click', function () {
     makeBoard(64)
 });
+
+function clearBoard() {
+    boxes.forEach((div) => div.remove());
+};
+
