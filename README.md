@@ -12,12 +12,12 @@ The task for this project was to build an Etch-a-Sketch with an interactive UI. 
 The full challenge description can be found here: https://www.theodinproject.com/lessons/foundations-etch-a-sketch. 
 
 ## Screenshots:
-![Home Page](images/Home.png)
+![Home Page](sketch/images/Home.png)
 
-![Instructions](images/Instructions.png)
+![Instructions](sketch/images/Instructions.png)
 
-![Classic Mode](images/Classic.png)
+![Classic Mode](sketch/images/Classic.png)
 
-![Rainbow Mode](images/Rainbow.png)
+![Rainbow Mode](sketch/images/Rainbow.png)
 
-![Dark Mode](images/Dark-Mode.png)
+![Dark Mode](sketch/images/Dark-Mode.png)
