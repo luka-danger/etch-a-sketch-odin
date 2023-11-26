@@ -9,13 +9,15 @@ This project was built in JavaScript, CSS, and HTML. This project is designed fo
 The task for this project was to build an Etch-a-Sketch with an interactive UI. I hope you enjoy! 
 
 ## Links:
-The full challenge description can be found [here] (https://www.theodinproject.com/lessons/foundations-etch-a-sketch). 
+The full challenge description can be found here: https://www.theodinproject.com/lessons/foundations-etch-a-sketch. 
 
 ## Screenshots:
-![alt text](images-rock-paper-scissors/Rps.png)
+![Home Page](images/Home.png)
 
-![alt text](images-rock-paper-scissors/RPS2.png)
+![Instructions](images/Instructions.png)
 
-![alt text](images-rock-paper-scissors/RPS3.png)
+![Classic Mode](images/Classic.png)
 
-![alt text](images-rock-paper-scissors/RPS4.png)
+![Rainbow Mode](images/Rainbow.png)
+
+![Dark Mode](images/Dark-Mode.png)
