@@ -29,6 +29,16 @@ body {
     justify-content: center;
 }
 
+#box {
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(185, 184, 184);
+}
+
 #home {
     margin-top: 10px; 
 }
