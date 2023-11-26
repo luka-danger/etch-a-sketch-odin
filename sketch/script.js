@@ -31,8 +31,10 @@ random.addEventListener('click', function () {
 });
 
 function blackColor(square) {
+    let opacity = 0;
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "black";
+        opacity += 0.2;
+        square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
     });
 };
 
