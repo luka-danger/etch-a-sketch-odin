@@ -43,6 +43,21 @@ black.addEventListener('click', function () {
     }); 
 });
 
+function selectColor(square, color) {
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = color;
+    });
+};
+
+colorSelector.addEventListener('click', function () {
+    let selectedColor = colorSelector.value;
+    
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        selectColor(square, selectedColor);
+    }); 
+});
+
 size16.addEventListener('click', function () {
     clearBoard()
     makeBoard(16);
