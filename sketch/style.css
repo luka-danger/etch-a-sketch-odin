@@ -1,12 +1,13 @@
 body {
-    background-color: cornflowerblue;
+    background-color: rgb(245, 71, 48);
 }
 
 h1 {
     color: white;
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 45px;
+    font-family: cursive;
 }
 
 #grid-container {
@@ -33,7 +34,7 @@ h1 {
     border: 1px solid black;
     width: 500px;
     height: 500px;
-    background-color: white;
+    background-color: rgb(185, 184, 184);
 }
 
 button {

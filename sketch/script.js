@@ -46,14 +46,17 @@ black.addEventListener('click', function () {
 });
 
 size16.addEventListener('click', function () {
+    clearBoard();
     makeBoard(16);
 });
 
 size32.addEventListener('click', function () {
+    clearBoard();
     makeBoard(32);
 });
 
 size64.addEventListener('click', function () {
+    clearBoard();
     makeBoard(64);
 });
 
