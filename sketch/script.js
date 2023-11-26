@@ -30,14 +30,17 @@ document.addEventListener('mouseup', () => {
     draw = false;
 });
 
+
 function randomColor(square) {
     let opacity = 0;
     square.addEventListener('mouseover', () => {
         if (draw) {
+            // Generate random rgb 
             let randomRed = Math.floor(Math.random() * 256);
             let randomGreen = Math.floor(Math.random() * 256);
             let randomBlue = Math.floor(Math.random() * 256);
             opacity += 0.2;
+            // Apply random generations to rgb + increment alpha (opacity)
             square.style.backgroundColor = `rgba(${randomRed}, ${randomGreen}, ${randomBlue}, ${opacity})`;
         }
     });
@@ -48,6 +51,25 @@ random.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         randomColor(square);
+    }); 
+});
+
+// No opacity 
+function rainbowColor(square) {
+    // Generate random hexadecimal color 
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    square.addEventListener('mouseover', () => {
+        if (draw) {
+            square.style.backgroundColor = '#' + randomColor;
+        }
+    });
+};
+
+// Calls rainbowColor() when 'Random Mode' button is clicked
+rainbow.addEventListener('click', function () {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        rainbowColor(square);
     }); 
 });
 
