@@ -3,6 +3,14 @@ window.addEventListener('load', (event) => {
     console.log('The page has fully loaded');
 });
 
+let active = false;
+
+document.querySelector('body').addEventListener('keydown', () => {
+    event.key = 'space'
+    console.log('active!');
+    active = true; 
+})
+
 function makeBoard(size) {
     let grid = document.querySelector('.grid');
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -17,10 +25,19 @@ function makeBoard(size) {
 }; 
 
 function randomColor(square) {
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = '#' + randomColor; 
+    if (active) {
+        active = true;
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = '#' + randomColor; 
     });
+    }
+    else if (!active) {
+        active = false;
+        square.forEach(item => {
+          item.removeEventListener('mouseover');
+        })
+      }
 };
 
 random.addEventListener('click', function () {
