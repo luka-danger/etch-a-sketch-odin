@@ -4,10 +4,12 @@ window.addEventListener('load', (event) => {
 });
 
 function makeBoard(size) {
+    // Creates a grid of X pixel sizes depending on selection
     let grid = document.querySelector('.grid');
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
+    // Creates a square board by iterating up to X * X 
     let boardSize = size * size
     for (let i = 0; i < boardSize; i++) {
         let square = document.createElement('square');
@@ -18,15 +20,18 @@ function makeBoard(size) {
 
 let draw = false; 
 
+// Activates the draw function while mouse is clicked down
 document.addEventListener('mousedown', () => {
     draw = true;
 });
 
+// De-activates the draw function while mouse is not clicked 
 document.addEventListener('mouseup', () => {
     draw = false;
 });
 
 function randomColor(square) {
+    // Generate random hexadecimal color 
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     square.addEventListener('mouseover', () => {
         if (draw) {
@@ -35,6 +40,7 @@ function randomColor(square) {
     });
 };
 
+// Calls randomColor() when 'Random Mode' button is clicked
 random.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach(square => {
@@ -46,12 +52,14 @@ function blackColor(square) {
     let opacity = 0;
     square.addEventListener("mouseover", () => {
         if (draw) {
+            // Add alpha opacity to rgb and increment by 20% each mouseover 
             opacity += 0.2;
             square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
         }
     });
 };
 
+// Calls blackColor() when 'Random Mode' button is clicked
 black.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach(square => {
@@ -85,12 +93,14 @@ clear.addEventListener('click', function () {
 
 function erase(square) {
     square.addEventListener("mouseover", () => {
+        // "Erases" board by changing color back to grid background
         square.style.backgroundColor = "rgb(185, 184, 184)";
     });
 };
 
 eraser.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
+    // Remove one square at a time
     squares.forEach(square => {
         erase(square);
     }); 
