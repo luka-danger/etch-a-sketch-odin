@@ -19,7 +19,7 @@ function makeBoard(size) {
 function randomColor(square) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "#" + randomColor;
+        square.style.backgroundColor = '#' + randomColor; 
     });
 };
 
@@ -42,21 +42,6 @@ black.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         blackColor(square);
-    }); 
-});
-
-function selectColor(square, color) {
-    square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = color;
-    });
-};
-
-colorSelector.addEventListener('click', function () {
-    let selectedColor = colorSelector.value;
-    
-    let squares = document.querySelectorAll('.square');
-    squares.forEach(square => {
-        selectColor(square, selectedColor);
     }); 
 });
 
