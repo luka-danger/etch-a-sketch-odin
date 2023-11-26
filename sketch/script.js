@@ -10,17 +10,13 @@ function makeBoard(size) {
 
     let boardSize = size * size
     for (let i = 0; i < boardSize; i++) {
-        const square = document.createElement('square');
+        let square = document.createElement('square');
         square.classList.add('square');
-        grid.appendChild(square);
-        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "#" + randomColor;
-        });
+        grid.appendChild(square); 
     };
 };
 
-function randomColor() {
+function randomColor(square) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "#" + randomColor;
@@ -28,32 +24,38 @@ function randomColor() {
 };
 
 random.addEventListener('click', function () {
-    randomColor();
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        randomColor(square);
+    }); 
 });
 
-function blackColor() {
+function blackColor(square) {
     square.addEventListener("mouseover", () => {
         square.style.backgroundColor = "black";
     });
 };
 
 black.addEventListener('click', function () {
-    blackColor();
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        blackColor(square);
+    }); 
 });
 
 size16.addEventListener('click', function () {
     clearBoard()
-    makeBoard(16)
+    makeBoard(16);
 });
 
 size32.addEventListener('click', function () {
     clearBoard()
-    makeBoard(32)
+    makeBoard(32);
 });
 
 size64.addEventListener('click', function () {
     clearBoard()
-    makeBoard(64)
+    makeBoard(64);
 });
 
 function clearBoard() {
