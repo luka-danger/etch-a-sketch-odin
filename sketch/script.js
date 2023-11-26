@@ -30,7 +30,7 @@ document.addEventListener('mouseup', () => {
     draw = false;
 });
 
-
+// Opacity, Color: Random
 function randomColor(square) {
     let opacity = 0;
     square.addEventListener('mouseover', () => {
@@ -54,7 +54,7 @@ random.addEventListener('click', function () {
     }); 
 });
 
-// No opacity 
+// No opacity, Color: Random
 function rainbowColor(square) {
     // Generate random hexadecimal color 
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -73,7 +73,8 @@ rainbow.addEventListener('click', function () {
     }); 
 });
 
-function blackColor(square) {
+// Opacity, Color: Black
+function classicMode(square) {
     let opacity = 0;
     square.addEventListener("mouseover", () => {
         if (draw) {
@@ -85,10 +86,28 @@ function blackColor(square) {
 };
 
 // Calls blackColor() when 'Random Mode' button is clicked
-black.addEventListener('click', function () {
+classic.addEventListener('click', function () {
     let squares = document.querySelectorAll('.square');
     squares.forEach(square => {
-        blackColor(square);
+        classicMode(square);
+    }); 
+});
+
+// No Opacity - Color: Black
+function darkMode(square) {
+    square.addEventListener("mouseover", () => {
+        if (draw) {
+            // Add alpha opacity to rgb and increment by 20% each mouseover 
+            square.style.backgroundColor = "black";
+        }
+    });
+};
+
+// Calls darkMode() when 'Random Mode' button is clicked
+dark.addEventListener('click', function () {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        darkMode(square);
     }); 
 });
 
