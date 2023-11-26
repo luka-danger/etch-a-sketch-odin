@@ -59,17 +59,14 @@ colorSelector.addEventListener('click', function () {
 });
 
 size16.addEventListener('click', function () {
-    clearBoard()
     makeBoard(16);
 });
 
 size32.addEventListener('click', function () {
-    clearBoard()
     makeBoard(32);
 });
 
 size64.addEventListener('click', function () {
-    clearBoard()
     makeBoard(64);
 });
 
@@ -80,4 +77,17 @@ function clearBoard() {
 
 clear.addEventListener('click', function () {
     clearBoard()
+});
+
+function erase(square) {
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "white";
+    });
+};
+
+eraser.addEventListener('click', function () {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        erase(square);
+    }); 
 });
