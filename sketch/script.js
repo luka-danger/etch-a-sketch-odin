@@ -31,14 +31,17 @@ document.addEventListener('mouseup', () => {
 });
 
 function randomColor(square) {
-    // Generate random hexadecimal color 
-    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let opacity = 0;
     square.addEventListener('mouseover', () => {
         if (draw) {
-            square.style.backgroundColor = '#' + randomColor;
+            let randomRed = Math.floor(Math.random() * 256);
+            let randomGreen = Math.floor(Math.random() * 256);
+            let randomBlue = Math.floor(Math.random() * 256);
+            opacity += 0.2;
+            square.style.backgroundColor = `rgba(${randomRed}, ${randomGreen}, ${randomBlue}, ${opacity})`;
         }
     });
-};
+}
 
 // Calls randomColor() when 'Random Mode' button is clicked
 random.addEventListener('click', function () {
