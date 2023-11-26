@@ -30,7 +30,7 @@ function randomColor(square) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     square.addEventListener('mouseover', () => {
         if (draw) {
-          square.style.backgroundColor = '#' + randomColor;
+            square.style.backgroundColor = '#' + randomColor;
         }
     });
 };
@@ -45,8 +45,10 @@ random.addEventListener('click', function () {
 function blackColor(square) {
     let opacity = 0;
     square.addEventListener("mouseover", () => {
-        opacity += 0.2;
-        square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        if (draw) {
+            opacity += 0.2;
+            square.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        }
     });
 };
 
