@@ -23,6 +23,16 @@ body {
     margin-bottom: 5px;
 }
 
+.instructions{
+    background-color: rgb(245, 71, 48);
+    display: flex;
+    justify-content: center;
+}
+
+#home {
+    margin-top: 10px; 
+}
+
 #button-container {
     display: flex;
     justify-content: center;
