@@ -14,7 +14,7 @@ function makeBoard(size) {
         square.classList.add('square');
         grid.appendChild(square); 
     };
-};
+}; 
 
 function randomColor(square) {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -71,7 +71,7 @@ clear.addEventListener('click', function () {
 
 function erase(square) {
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "white";
+        square.style.backgroundColor = "rgb(185, 184, 184)";
     });
 };
 
