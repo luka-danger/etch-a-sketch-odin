@@ -2,6 +2,20 @@ body {
     background-color: cornflowerblue;
 }
 
+#container {
+    display: flex;
+    align-items: center;
+}
+
+#instructions {
+    display: flex;
+    justify-content: baseline;
+    margin-right: 20px;
+    white-space: pre-wrap;
+    font-size: 20px;
+    color: white;
+}
+
 #grid-container {
     display: flex;
     justify-content: center;
